@@ -39,5 +39,8 @@ train_model			% TRAIN ESTIMATION MODEL
 
 %==== TESTING STAGE ====%
 
+test_model
 
+
+prediction_analysis
 

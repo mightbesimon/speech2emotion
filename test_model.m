@@ -12,7 +12,8 @@ likelihood_ste_male_angry(3,1:12) = naive_bayes(ave_ste_male_angry(index_male_an
 likelihood_ste_male_angry(4,1:12) = naive_bayes(ave_ste_male_angry(index_male_angry+1:end), phat_ste_male_sad    );
 
 [p, idx] = max(likelihood_ste_male_angry);
-emotions(idx)
+% emotions(idx)
+hit_rate_male_angry = numel(idx( idx==1 )) / numel(idx)
 
 
 %==== male excited ====%
@@ -24,7 +25,8 @@ likelihood_ste_male_excited(3,1:12) = naive_bayes(ave_ste_male_excited(index_mal
 likelihood_ste_male_excited(4,1:12) = naive_bayes(ave_ste_male_excited(index_male_excited+1:end), phat_ste_male_sad    );
 
 [p, idx] = max(likelihood_ste_male_excited);
-emotions(idx)
+% emotions(idx)
+hit_rate_male_excited = numel(idx( idx==2 )) / numel(idx)
 
 
 %==== male happy ====%
@@ -36,7 +38,8 @@ likelihood_ste_male_happy(3,1:12) = naive_bayes(ave_ste_male_happy(index_male_ha
 likelihood_ste_male_happy(4,1:12) = naive_bayes(ave_ste_male_happy(index_male_happy+1:end), phat_ste_male_sad    );
 
 [p, idx] = max(likelihood_ste_male_happy);
-emotions(idx)
+% emotions(idx)
+hit_rate_male_happy = numel(idx( idx==3 )) / numel(idx)
 
 
 %==== male sad ====%
@@ -48,6 +51,7 @@ likelihood_ste_male_sad(3,1:12) = naive_bayes(ave_ste_male_sad(index_male_sad+1:
 likelihood_ste_male_sad(4,1:12) = naive_bayes(ave_ste_male_sad(index_male_sad+1:end), phat_ste_male_sad    );
 
 [p, idx] = max(likelihood_ste_male_sad);
-emotions(idx)
+% emotions(idx)
+hit_rate_male_sad = numel(idx( idx==4 )) / numel(idx)
 
 
