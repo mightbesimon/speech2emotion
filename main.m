@@ -10,8 +10,7 @@
 
 
 % housekeeping
- close all 
-fclose all
+close  all
 clear; clc
 
 % constannts
@@ -20,7 +19,7 @@ emotions = {
 	'excited',
 	'happy',
 	'sad',
-}
+};
 
 
 %==== TRAINING STAGE ====%
