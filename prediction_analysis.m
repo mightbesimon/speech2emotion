@@ -4,8 +4,8 @@
 
 
 
-emotionIdx(1:numel(emotions), 1) = 1:numel(emotions);
-hit_rate_male = sum(idx==emotionIdx, 2) / size(idx, 2)
+emotion_idx(1:numel(emotions), 1) = 1:numel(emotions);
+hit_rate_male = sum(idx==emotion_idx, 3) / size(idx, 3);
 
 
 figure('Name', 'hit rate bar graph')

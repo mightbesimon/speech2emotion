@@ -7,26 +7,26 @@
 train_ratio = 0.8;
 
 % index at 80%
-index_male_angry   = ceil( numel(ave_ste_male_angry)   * train_ratio );
-index_male_excited = ceil( numel(ave_ste_male_excited) * train_ratio );
-index_male_happy   = ceil( numel(ave_ste_male_happy)   * train_ratio );
-index_male_sad     = ceil( numel(ave_ste_male_sad)     * train_ratio );
+train_index = ceil( size(audio_male, 2) * train_ratio );
 
 
 
 % maximum likelihood estimation
 % using the first 80% of data
 % short-time energy
-phat_ste_male_angry   = mle(ave_ste_male_angry  (1:index_male_angry  ));
-phat_ste_male_excited = mle(ave_ste_male_excited(1:index_male_excited));
-phat_ste_male_happy   = mle(ave_ste_male_happy  (1:index_male_happy  ));
-phat_ste_male_sad     = mle(ave_ste_male_sad    (1:index_male_sad    ));
+% phat_ste_male(emotion, file_number)
+% phat_male(emotion, feature, file_number)
+% phat(gender, emotion, feature, file_numer) gender = male, female, both
+phat_ste_male(1, :) = mle(ave_ste_male(1, 1:train_index));
+phat_ste_male(2, :) = mle(ave_ste_male(2, 1:train_index));
+phat_ste_male(3, :) = mle(ave_ste_male(3, 1:train_index));
+phat_ste_male(4, :) = mle(ave_ste_male(4, 1:train_index));
 
 % zero-crossing rate
-phat_zcr_male_angry   = mle(ave_zcr_male_angry  (1:index_male_angry  ));
-phat_zcr_male_excited = mle(ave_zcr_male_excited(1:index_male_excited));
-phat_zcr_male_happy   = mle(ave_zcr_male_happy  (1:index_male_happy  ));
-phat_zcr_male_sad     = mle(ave_zcr_male_sad    (1:index_male_sad    ));
+phat_zcr_male(1, :) = mle(ave_zcr_male(1, 1:train_index));
+phat_zcr_male(2, :) = mle(ave_zcr_male(2, 1:train_index));
+phat_zcr_male(3, :) = mle(ave_zcr_male(3, 1:train_index));
+phat_zcr_male(4, :) = mle(ave_zcr_male(4, 1:train_index));
 
 
 P_prior = 0.25;
