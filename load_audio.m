@@ -6,8 +6,8 @@
 
 % define directories
 dirAudio  = pwd;							% dir path to male/female folders
-dirMale   = fullfile(dirAudio, 'male2');	% male folder
-dirFemale = fullfile(dirAudio, 'female1');	% female folder
+dirMale   = fullfile(dirAudio, 'male');	% male folder
+dirFemale = fullfile(dirAudio, 'female');	% female folder
 
 
 % read audio files
