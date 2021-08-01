@@ -14,11 +14,22 @@ close  all
 clear; clc
 
 % constannts
+gender = {
+	'male',
+	'female',
+	'both',
+};
 emotions = {
 	'angry',
 	'excited',
 	'happy',
 	'sad',
+};
+features = {
+	'short-time energy',
+	'zero-crossing rate',
+	'pitch',
+	'spetral energy',
 };
 
 
